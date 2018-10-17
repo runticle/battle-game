@@ -7,7 +7,7 @@
 
 <h1> Player 1 name is <%= @p1 %> </h1>
 <h1> Player 2 name is <%= @p2 %> </h1>
-<div> <%= @p2 %> hitpoints: 50HP </div>
+<div> <%= @p2 %> hitpoints: <%= @p2_health %>HP</div>
 
 <form action=/play/attack_p2 method=post >
 <input type=submit value=Attack>

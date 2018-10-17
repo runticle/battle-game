@@ -4,10 +4,9 @@
 require 'capybara'
 require 'capybara/rspec'
 
-feature "Entering player names" do
-  scenario "P1 and P2 enter names" do
+feature 'Entering player names' do
+  scenario 'P1 and P2 enter names' do
     sign_in_and_play
-    expect(page).to have_content "John", "Not John"
+    expect(page).to have_content 'John', 'Not John'
   end
-
 end
