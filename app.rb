@@ -29,9 +29,15 @@ class Battle < Sinatra::Base
   post '/play/:attack' do
     @p1 = $game.player1.name
     @p2 = $game.player2.name
-    $game.attack($game.player2) if params[:attack] == "attack_p2"
-    $game.attack($game.player1) if params[:attack] == "attack_p1"
-    flash[:attack] = "You attacked them! Yay!"
+    $game.attack($game.next_receiver)
+    flash[:attack] = "You attacked #{$game.next_receiver.name}! Yay!"
+    $game.change_attacker
+    redirect('/game-over') if $game.game_over?
     redirect('/play')
+  end
+
+  get '/game-over' do
+    @game = $game
+    erb(:game_over)
   end
 end

@@ -5,18 +5,18 @@
   </div>
 <% end %>
 
-<div name=player_1>
-<h1> Player 1 name is <%= @p1 %> </h1>
-<div> <%= @p1 %> hitpoints: <%= @p1_health %>HP</div>
-<form action=/play/attack_p2 method=post >
-<input type=submit value=Attack>
-</form>
+<div name=player_1 style="float:left;">
+  <h1> Player 1 name is <%= @p1 %> </h1>
+  <div> <%= @p1 %> hitpoints: <%= @p1_health %>HP</div>
 </div>
 
-<div name=player_2>
-<h1> Player 2 name is <%= @p2 %> </h1>
-<div> <%= @p2 %> hitpoints: <%= @p2_health %>HP</div>
-<form action=/play/attack_p1 method=post >
-<input type=submit value=Attack>
-</form>
+<div name=player_2 style="float:right;">
+  <h1> Player 2 name is <%= @p2 %> </h1>
+  <div> <%= @p2 %> hitpoints: <%= @p2_health %>HP</div>
+</div>
+
+<div>
+  <form action=/play/attack_p2 method=post>
+    <input type=submit value=Attack>
+  </form>
 </div>
