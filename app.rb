@@ -21,6 +21,7 @@ class Battle < Sinatra::Base
   get '/play' do
     @p1 = $game.player1.name
     @p2 = $game.player2.name
+    @p1_health = $game.player1.health
     @p2_health = $game.player2.health
     erb(:play)
   end
@@ -28,8 +29,9 @@ class Battle < Sinatra::Base
   post '/play/:attack' do
     @p1 = $game.player1.name
     @p2 = $game.player2.name
-    $game.attack($game.player2)
-    flash[:attack] = "You attacked #{@p2}!"
+    $game.attack($game.player2) if params[:attack] == "attack_p2"
+    $game.attack($game.player1) if params[:attack] == "attack_p1"
+    flash[:attack] = "You attacked them! Yay!"
     redirect('/play')
   end
 end
