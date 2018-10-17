@@ -17,7 +17,7 @@ describe Game do
       game.attack(player1)
       expect(player1.health).to eq 40
     end
-  describe '#change_attacker'
+    describe '#change_attacker'
     it 'player 2 is next receiver' do
       expect(game.next_receiver).to eq player2
     end

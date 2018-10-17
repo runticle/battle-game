@@ -1,18 +1,25 @@
 class Game
-  attr_reader :player1, :player2, :next_receiver
+  attr_reader :next_receiver
 
-  def self.create(player_1, player_2)
-    @game = Game.new(player_1, player_2)
+  def initialize(player1, player2)
+    @players = [player1, player2]
+    @next_receiver = player2
+  end
+
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
   end
 
   def self.instance
     @game
   end
 
-  def initialize(player1, player2)
-    @player1 = player1
-    @player2 = player2
-    @next_receiver = player2
+  def player1
+    @players.first
+  end
+
+  def player2
+    @players.last
   end
 
   def attack(player)
@@ -20,15 +27,19 @@ class Game
   end
 
   def change_attacker
-    @next_receiver == @player1 ? @next_receiver = @player2 : @next_receiver = @player1
+    @next_receiver = @next_receiver == player1 ? player2 : player1
   end
 
   def game_over?
-    loser
+    player1.dead || player2.dead
   end
 
   def loser
-    @loser = @player1 if @player1.health == 0
-    @loser = @player2 if @player2.health == 0
+    @loser = player1 if player1.dead
+    @loser = player2 if player2.dead
+  end
+
+  def winner
+    player1 == loser ? player2 : player1
   end
 end
