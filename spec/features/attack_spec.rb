@@ -1,3 +1,6 @@
+require 'capybara'
+require 'capybara/rspec'
+
 feature 'attcking players' do
   scenario 'i can attack player 2' do
     sign_in_and_play
