@@ -10,7 +10,7 @@ describe Player do
       expect(player1.health).to eq 50
     end
     it 'should have 40HP after 1 attack' do
-      player1.attacked
+      player1.receive_damage
       expect(player1.health).to eq 40
     end
   end

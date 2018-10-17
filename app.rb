@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/flash'
 require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -26,7 +27,7 @@ class Battle < Sinatra::Base
   post '/play/:attack' do
     @p1 = $p1.name
     @p2 = $p2.name
-    $p2.attacked
+    Game.new.attack($p2)
     flash[:attack] = "You attacked #{@p2}!"
     redirect('/play')
   end
