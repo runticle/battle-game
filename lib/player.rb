@@ -9,8 +9,7 @@ class Player
   end
 
   def receive_damage
-    @health -= 10
-    health_calc
+    @health -= damage
   end
 
   def health_status
@@ -22,6 +21,10 @@ class Player
   end
 
   private
+
+  def damage
+    Kernel.rand(20)
+  end
 
   def health_calc
     case @health

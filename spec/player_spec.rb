@@ -9,9 +9,10 @@ describe Player do
     it 'should start with 100HP' do
       expect(player1.health).to eq 100
     end
-    it 'should have 40HP after 1 attack' do
+    it 'should have 85HP after 1 attack' do
+      allow(Kernel).to receive(:rand).and_return 15
       player1.receive_damage
-      expect(player1.health).to eq 90
+      expect(player1.health).to eq 85
     end
   end
 end
