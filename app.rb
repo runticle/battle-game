@@ -29,8 +29,9 @@ class Battle < Sinatra::Base
   post '/play/:attack' do
     @game.attack(@game.next_receiver)
     flash[:attack] = "You attacked #{@game.next_receiver.name}! Yay!"
-    @game.change_attacker
     redirect('/game-over') if @game.game_over?
+    @game.change_receiver
+    @game.change_attacker
     redirect('/play')
   end
 

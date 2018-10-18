@@ -1,9 +1,10 @@
 class Game
-  attr_reader :next_receiver
+  attr_reader :next_receiver, :next_attacker
 
   def initialize(player1, player2)
     @players = [player1, player2]
     @next_receiver = player2
+    @next_attacker = player1
   end
 
   def self.create(player1, player2)
@@ -26,8 +27,12 @@ class Game
     player.receive_damage
   end
 
-  def change_attacker
+  def change_receiver
     @next_receiver = @next_receiver == player1 ? player2 : player1
+  end
+
+  def change_attacker
+  @next_attacker = @next_attacker == player1 ? player2 : player1
   end
 
   def game_over?

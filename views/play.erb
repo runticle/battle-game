@@ -73,12 +73,10 @@
   </style>
 </head>
 <body>
-<% flash.keys.each do |type| %>
-  <div data-alert class="flash <%= type %> alert-box radius">
-    <%= flash[type] %>
-    <a href="#" class="close">&times;</a>
-  </div>
-<% end %>
+<div>
+It's the turn of the mighty <%= @game.next_attacker.name %>
+</div>
+
 <section class="game">
   <div name=player_1 style="width: calc(50% - 1.5em);float:left;margin: 0 .75em;">
     <h1><span class="label">Player 1:</span><span class="name"><%= @game.player1.name %></span></h1>
@@ -101,5 +99,12 @@
     <input type=submit value=Attack>
   </form>
 </div>
+
+<% flash.keys.each do |type| %>
+  <div data-alert class="flash <%= type %> alert-box radius">
+    <%= flash[type] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
 </body>
 </html>

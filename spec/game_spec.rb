@@ -21,8 +21,8 @@ describe Game do
     it 'player 2 is next receiver' do
       expect(game.next_receiver).to eq player2
     end
-    it 'changes next_receiver to player 1' do
-      game.change_attacker
+    it 'changes next_receiver to player 22' do
+      game.change_receiver
       expect(game.next_receiver).to eq player1
     end
   end
