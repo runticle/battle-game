@@ -26,9 +26,9 @@ class Game
 
   # messages
 
-  def message
-    @message
-  end
+  attr_reader :message
+
+  attr_reader :para
 
   # players moves
 

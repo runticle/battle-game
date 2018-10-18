@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player1) { double(:player1, name: "John", paralysed?: false)}
-  let(:player2) { double(:player2, name: "Not John", paralysed?: false) }
+  let(:player1) { double(:player1, name: 'John', paralysed?: false) }
+  let(:player2) { double(:player2, name: 'Not John', paralysed?: false) }
   let(:game) { described_class.new(player1, player2) }
 
   describe '#initialize' do

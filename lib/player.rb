@@ -21,6 +21,7 @@ class Player
 
   def heal
     @health += 25
+    @health = 100 if @health > 100
   end
 
   # health and wellbeing
@@ -45,6 +46,10 @@ class Player
 
   def kick_damage
     [0, 0, 5, 5, 30, 30, 40].sample
+  end
+
+  def heal_points
+    [10, 15, 20, 50, 100].sample
   end
 
   def health_calc

@@ -3,7 +3,6 @@ require './lib/player'
 require './lib/game'
 
 class Battle < Sinatra::Base
-  
   before do
     @game = Game.instance
   end
