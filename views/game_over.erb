@@ -2,8 +2,1048 @@
 <html>
 <head>
   <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+  <style media="screen">
+  .game-over {
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  -webkit-font-smoothing: none;
+  font-size: 3vw;
+  text-shadow: 2px 2px 0px #333;
+  text-align: center;
+  width: 100%;
+  -webkit-animation: 250ms game-over 0.1s forwards;
+          animation: 250ms game-over 0.1s forwards;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.game-over span {
+  opacity: 0;
+  display: inline;
+  padding-top: 3.5rem;
+  -webkit-transform: scale(0) rotate(-2deg);
+          transform: scale(0) rotate(-2deg);
+  -webkit-animation: 3s slide 3.2s ease-out forwards, infinite 400ms rock 6.2s linear alternate;
+          animation: 3s slide 3.2s ease-out forwards, infinite 400ms rock 6.2s linear alternate;
+  z-index: 11;
+}
+
+.drop {
+  width: 1vw;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  background: #8a0707;
+  -webkit-animation: 3s appear ease-out forwards;
+          animation: 3s appear ease-out forwards;
+}
+
+.drop:nth-child(1) {
+  height: 86vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+}
+
+.drop:nth-child(2) {
+  height: 68vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 16.6s;
+          animation-duration: 16.6s;
+}
+
+.drop:nth-child(3) {
+  height: 69vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.drop:nth-child(4) {
+  height: 31vh;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 10.2s;
+          animation-duration: 10.2s;
+}
+
+.drop:nth-child(5) {
+  height: 68vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 15.2s;
+          animation-duration: 15.2s;
+}
+
+.drop:nth-child(6) {
+  height: 66vh;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 12.8s;
+          animation-duration: 12.8s;
+}
+
+.drop:nth-child(7) {
+  height: 92vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 18.2s;
+          animation-duration: 18.2s;
+}
+
+.drop:nth-child(8) {
+  height: 54vh;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-duration: 6.4s;
+          animation-duration: 6.4s;
+}
+
+.drop:nth-child(9) {
+  height: 41vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 8.6s;
+          animation-duration: 8.6s;
+}
+
+.drop:nth-child(10) {
+  height: 66vh;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 18.6s;
+          animation-duration: 18.6s;
+}
+
+.drop:nth-child(11) {
+  height: 49vh;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+}
+
+.drop:nth-child(12) {
+  height: 113vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 19.6s;
+          animation-duration: 19.6s;
+}
+
+.drop:nth-child(13) {
+  height: 114vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 20.2s;
+          animation-duration: 20.2s;
+}
+
+.drop:nth-child(14) {
+  height: 36vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 14.4s;
+          animation-duration: 14.4s;
+}
+
+.drop:nth-child(15) {
+  height: 90vh;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.drop:nth-child(16) {
+  height: 54vh;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 8.2s;
+          animation-duration: 8.2s;
+}
+
+.drop:nth-child(17) {
+  height: 47vh;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 6.8s;
+          animation-duration: 6.8s;
+}
+
+.drop:nth-child(18) {
+  height: 122vh;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 19.2s;
+          animation-duration: 19.2s;
+}
+
+.drop:nth-child(19) {
+  height: 43vh;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 11.4s;
+          animation-duration: 11.4s;
+}
+
+.drop:nth-child(20) {
+  height: 79vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 18.2s;
+          animation-duration: 18.2s;
+}
+
+.drop:nth-child(21) {
+  height: 69vh;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 16.2s;
+          animation-duration: 16.2s;
+}
+
+.drop:nth-child(22) {
+  height: 129vh;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-duration: 12.6s;
+          animation-duration: 12.6s;
+}
+
+.drop:nth-child(23) {
+  height: 72vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 16.2s;
+          animation-duration: 16.2s;
+}
+
+.drop:nth-child(24) {
+  height: 103vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 8.6s;
+          animation-duration: 8.6s;
+}
+
+.drop:nth-child(25) {
+  height: 50vh;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
+}
+
+.drop:nth-child(26) {
+  height: 85vh;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 9.4s;
+          animation-duration: 9.4s;
+}
+
+.drop:nth-child(27) {
+  height: 40vh;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 19.6s;
+          animation-duration: 19.6s;
+}
+
+.drop:nth-child(28) {
+  height: 122vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 8.4s;
+          animation-duration: 8.4s;
+}
+
+.drop:nth-child(29) {
+  height: 108vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 2.4s;
+          animation-duration: 2.4s;
+}
+
+.drop:nth-child(30) {
+  height: 115vh;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 7.6s;
+          animation-duration: 7.6s;
+}
+
+.drop:nth-child(31) {
+  height: 81vh;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  -webkit-animation-duration: 10.4s;
+          animation-duration: 10.4s;
+}
+
+.drop:nth-child(32) {
+  height: 78vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+}
+
+.drop:nth-child(33) {
+  height: 83vh;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-duration: 14.2s;
+          animation-duration: 14.2s;
+}
+
+.drop:nth-child(34) {
+  height: 92vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 10.6s;
+          animation-duration: 10.6s;
+}
+
+.drop:nth-child(35) {
+  height: 65vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 1.4s;
+          animation-duration: 1.4s;
+}
+
+.drop:nth-child(36) {
+  height: 118vh;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-duration: 4.4s;
+          animation-duration: 4.4s;
+}
+
+.drop:nth-child(37) {
+  height: 86vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 6.4s;
+          animation-duration: 6.4s;
+}
+
+.drop:nth-child(38) {
+  height: 52vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+}
+
+.drop:nth-child(39) {
+  height: 76vh;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-duration: 8.4s;
+          animation-duration: 8.4s;
+}
+
+.drop:nth-child(40) {
+  height: 115vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 19.2s;
+          animation-duration: 19.2s;
+}
+
+.drop:nth-child(41) {
+  height: 35vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 8.8s;
+          animation-duration: 8.8s;
+}
+
+.drop:nth-child(42) {
+  height: 118vh;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 11.2s;
+          animation-duration: 11.2s;
+}
+
+.drop:nth-child(43) {
+  height: 76vh;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 5.4s;
+          animation-duration: 5.4s;
+}
+
+.drop:nth-child(44) {
+  height: 65vh;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+}
+
+.drop:nth-child(45) {
+  height: 107vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 16.4s;
+          animation-duration: 16.4s;
+}
+
+.drop:nth-child(46) {
+  height: 74vh;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-duration: 6.2s;
+          animation-duration: 6.2s;
+}
+
+.drop:nth-child(47) {
+  height: 86vh;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+}
+
+.drop:nth-child(48) {
+  height: 36vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 8.6s;
+          animation-duration: 8.6s;
+}
+
+.drop:nth-child(49) {
+  height: 41vh;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 12.4s;
+          animation-duration: 12.4s;
+}
+
+.drop:nth-child(50) {
+  height: 103vh;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 18.8s;
+          animation-duration: 18.8s;
+}
+
+.drop:nth-child(51) {
+  height: 57vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 9.6s;
+          animation-duration: 9.6s;
+}
+
+.drop:nth-child(52) {
+  height: 118vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+}
+
+.drop:nth-child(53) {
+  height: 62vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 19.8s;
+          animation-duration: 19.8s;
+}
+
+.drop:nth-child(54) {
+  height: 38vh;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 7.4s;
+          animation-duration: 7.4s;
+}
+
+.drop:nth-child(55) {
+  height: 85vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 6.6s;
+          animation-duration: 6.6s;
+}
+
+.drop:nth-child(56) {
+  height: 64vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 5.6s;
+          animation-duration: 5.6s;
+}
+
+.drop:nth-child(57) {
+  height: 61vh;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 8.4s;
+          animation-duration: 8.4s;
+}
+
+.drop:nth-child(58) {
+  height: 100vh;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  -webkit-animation-duration: 2.2s;
+          animation-duration: 2.2s;
+}
+
+.drop:nth-child(59) {
+  height: 59vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 3.2s;
+          animation-duration: 3.2s;
+}
+
+.drop:nth-child(60) {
+  height: 108vh;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  -webkit-animation-duration: 4.8s;
+          animation-duration: 4.8s;
+}
+
+.drop:nth-child(61) {
+  height: 86vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 1.4s;
+          animation-duration: 1.4s;
+}
+
+.drop:nth-child(62) {
+  height: 110vh;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 19.2s;
+          animation-duration: 19.2s;
+}
+
+.drop:nth-child(63) {
+  height: 61vh;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
+}
+
+.drop:nth-child(64) {
+  height: 56vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 12.2s;
+          animation-duration: 12.2s;
+}
+
+.drop:nth-child(65) {
+  height: 46vh;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+}
+
+.drop:nth-child(66) {
+  height: 127vh;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
+}
+
+.drop:nth-child(67) {
+  height: 35vh;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 5.4s;
+          animation-duration: 5.4s;
+}
+
+.drop:nth-child(68) {
+  height: 33vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 5.6s;
+          animation-duration: 5.6s;
+}
+
+.drop:nth-child(69) {
+  height: 69vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 12.8s;
+          animation-duration: 12.8s;
+}
+
+.drop:nth-child(70) {
+  height: 37vh;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  -webkit-animation-duration: 19.8s;
+          animation-duration: 19.8s;
+}
+
+.drop:nth-child(71) {
+  height: 87vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 14.2s;
+          animation-duration: 14.2s;
+}
+
+.drop:nth-child(72) {
+  height: 85vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 17.2s;
+          animation-duration: 17.2s;
+}
+
+.drop:nth-child(73) {
+  height: 53vh;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-duration: 2.6s;
+          animation-duration: 2.6s;
+}
+
+.drop:nth-child(74) {
+  height: 122vh;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-duration: 12.2s;
+          animation-duration: 12.2s;
+}
+
+.drop:nth-child(75) {
+  height: 103vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 13.2s;
+          animation-duration: 13.2s;
+}
+
+.drop:nth-child(76) {
+  height: 119vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 10.8s;
+          animation-duration: 10.8s;
+}
+
+.drop:nth-child(77) {
+  height: 87vh;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 3.6s;
+          animation-duration: 3.6s;
+}
+
+.drop:nth-child(78) {
+  height: 92vh;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+}
+
+.drop:nth-child(79) {
+  height: 64vh;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-duration: 14.8s;
+          animation-duration: 14.8s;
+}
+
+.drop:nth-child(80) {
+  height: 122vh;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-duration: 8.6s;
+          animation-duration: 8.6s;
+}
+
+.drop:nth-child(81) {
+  height: 89vh;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 1.8s;
+          animation-duration: 1.8s;
+}
+
+.drop:nth-child(82) {
+  height: 76vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 18.4s;
+          animation-duration: 18.4s;
+}
+
+.drop:nth-child(83) {
+  height: 102vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.drop:nth-child(84) {
+  height: 45vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 6.2s;
+          animation-duration: 6.2s;
+}
+
+.drop:nth-child(85) {
+  height: 124vh;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-duration: 20.8s;
+          animation-duration: 20.8s;
+}
+
+.drop:nth-child(86) {
+  height: 57vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 8.8s;
+          animation-duration: 8.8s;
+}
+
+.drop:nth-child(87) {
+  height: 106vh;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+}
+
+.drop:nth-child(88) {
+  height: 98vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 9.8s;
+          animation-duration: 9.8s;
+}
+
+.drop:nth-child(89) {
+  height: 37vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+}
+
+.drop:nth-child(90) {
+  height: 70vh;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 13.4s;
+          animation-duration: 13.4s;
+}
+
+.drop:nth-child(91) {
+  height: 55vh;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 6.8s;
+          animation-duration: 6.8s;
+}
+
+.drop:nth-child(92) {
+  height: 33vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 19.2s;
+          animation-duration: 19.2s;
+}
+
+.drop:nth-child(93) {
+  height: 88vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 2.8s;
+          animation-duration: 2.8s;
+}
+
+.drop:nth-child(94) {
+  height: 71vh;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-duration: 8.2s;
+          animation-duration: 8.2s;
+}
+
+.drop:nth-child(95) {
+  height: 118vh;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-duration: 3.6s;
+          animation-duration: 3.6s;
+}
+
+.drop:nth-child(96) {
+  height: 107vh;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 3.2s;
+          animation-duration: 3.2s;
+}
+
+.drop:nth-child(97) {
+  height: 126vh;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 4.4s;
+          animation-duration: 4.4s;
+}
+
+.drop:nth-child(98) {
+  height: 108vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 14.6s;
+          animation-duration: 14.6s;
+}
+
+.drop:nth-child(99) {
+  height: 111vh;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 3.4s;
+          animation-duration: 3.4s;
+}
+
+.drop:nth-child(100) {
+  height: 103vh;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 2.2s;
+          animation-duration: 2.2s;
+}
+
+.drop:nth-child(101) {
+  height: 127vh;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 3.6s;
+          animation-duration: 3.6s;
+}
+
+@-webkit-keyframes appear {
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes appear {
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+@-webkit-keyframes game-over {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes game-over {
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide {
+  75% {
+    -webkit-transform: scale(1) rotate(5turn);
+            transform: scale(1) rotate(5turn);
+    opacity: 0.5;
+  }
+  92% {
+    -webkit-transform: scale(1) rotate(5turn);
+            transform: scale(1) rotate(5turn);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.15) rotate(5turn);
+            transform: scale(1.15) rotate(5turn);
+    opacity: 1;
+  }
+}
+@keyframes slide {
+  75% {
+    -webkit-transform: scale(1) rotate(5turn);
+            transform: scale(1) rotate(5turn);
+    opacity: 0.5;
+  }
+  92% {
+    -webkit-transform: scale(1) rotate(5turn);
+            transform: scale(1) rotate(5turn);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.15) rotate(5turn);
+            transform: scale(1.15) rotate(5turn);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes rock {
+  0% {
+    -webkit-transform: rotate(-2deg) scale(1.15);
+            transform: rotate(-2deg) scale(1.15);
+  }
+  100% {
+    -webkit-transform: rotate(2deg) scale(1.15);
+            transform: rotate(2deg) scale(1.15);
+  }
+}
+@keyframes rock {
+  0% {
+    -webkit-transform: rotate(-2deg) scale(1.15);
+            transform: rotate(-2deg) scale(1.15);
+  }
+  100% {
+    -webkit-transform: rotate(2deg) scale(1.15);
+            transform: rotate(2deg) scale(1.15);
+  }
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+body {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+</style>
 </head>
 
-  <div><%= @game.loser.name %> is dead! Hahahahahha </div>
+<div class="game-over"><span>GAME OVER! <%= @game.loser.name %> is dead!</span></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
+<div class="drop"></div>
 
 </hmtl>

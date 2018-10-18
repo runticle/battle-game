@@ -71,10 +71,16 @@
      .healthcontainer.strong .health {
       background: #76da69
     }
+
+    .message {
+      font-size: 1.2em;
+      color: #BADA55;
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
-<div>
+<div class="message">
 It's the turn of the mighty <%= @game.next_attacker.name %>
 </div>
 
@@ -106,11 +112,9 @@ It's the turn of the mighty <%= @game.next_attacker.name %>
   </form>
 </div>
 
-<% flash.keys.each do |type| %>
-  <div data-alert class="flash <%= type %> alert-box radius">
-    <%= flash[type] %>
-    <a href="#" class="close">&times;</a>
-  </div>
+<% if flash[:attack] %>
+  <div class="message"><%= flash[:attack] %></div>
 <% end %>
+
 </body>
 </html>
