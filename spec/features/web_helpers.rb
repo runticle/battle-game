@@ -7,6 +7,6 @@ end
 
 def super_punch
   19.times do
-    click_button("Punch")
+    click_button('Punch')
   end
 end

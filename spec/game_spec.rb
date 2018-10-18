@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player1) { double(:player1, receive_damage: true, health: 40) }
-  let(:player2) { double(:player2, receive_damage: 15, health: 25) }
+  let(:player1) { double(:player1) }
+  let(:player2) { double(:player2) }
   let(:game) { described_class.new(player1, player2) }
 
   describe '#initialize' do
@@ -31,10 +31,17 @@ describe Game do
     end
   end
 
-  describe "#kick" do
+  describe '#kick' do
     it 'damages player 1' do
       expect(player1).to receive(:receive_kick)
       game.kick(player1)
+    end
+  end
+
+  describe '#heal' do
+    it 'heals player 1' do
+      expect(player1).to receive(:heal)
+      game.heal(player1)
     end
   end
 end

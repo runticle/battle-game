@@ -13,4 +13,9 @@ feature 'attacking players' do
     click_button 'Punch'
     expect(page).to have_content 'Not John punched John!'
   end
+  scenario 'player 2 can punch player 2' do
+    sign_in_and_play
+    click_button 'Kick'
+    expect(page).to have_content 'John kicked Not John'
+  end
 end

@@ -16,6 +16,10 @@ class Player
     @health -= kick_damage
   end
 
+  def heal
+    @health += 25
+  end
+
   def health_status
     health_calc
   end

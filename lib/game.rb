@@ -23,6 +23,8 @@ class Game
     @players.last
   end
 
+  # players moves
+
   def punch(player)
     player.receive_punch
   end
@@ -30,6 +32,12 @@ class Game
   def kick(player)
     player.receive_kick
   end
+
+  def heal(player)
+    player.heal
+  end
+
+  # game mechanics
 
   def change_receiver
     @next_receiver = @next_receiver == player1 ? player2 : player1
