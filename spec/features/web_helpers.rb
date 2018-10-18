@@ -5,8 +5,8 @@ def sign_in_and_play
   click_button('Submit')
 end
 
-def super_attack
+def super_punch
   19.times do
-    click_button("Attack")
+    click_button("Punch")
   end
 end

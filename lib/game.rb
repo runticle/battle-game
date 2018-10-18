@@ -23,8 +23,12 @@ class Game
     @players.last
   end
 
-  def attack(player)
-    player.receive_damage
+  def punch(player)
+    player.receive_punch
+  end
+
+  def kick(player)
+    player.receive_kick
   end
 
   def change_receiver

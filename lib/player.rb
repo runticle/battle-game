@@ -8,8 +8,12 @@ class Player
     @health_status = 'strong'
   end
 
-  def receive_damage
-    @health -= damage
+  def receive_punch
+    @health -= punch_damage
+  end
+
+  def receive_kick
+    @health -= kick_damage
   end
 
   def health_status
@@ -22,8 +26,12 @@ class Player
 
   private
 
-  def damage
+  def punch_damage
     Kernel.rand(20)
+  end
+
+  def kick_damage
+    Kernel.rand(30)
   end
 
   def health_calc

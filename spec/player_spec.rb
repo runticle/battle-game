@@ -11,7 +11,7 @@ describe Player do
     end
     it 'should have 85HP after 1 attack' do
       allow(Kernel).to receive(:rand).and_return 15
-      player1.receive_damage
+      player1.receive_punch
       expect(player1.health).to eq 85
     end
   end

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head >
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
   <style media="screen">
     body {
       font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
@@ -95,8 +96,13 @@ It's the turn of the mighty <%= @game.next_attacker.name %>
   </div>
 </section>
 <div>
-  <form action=/play/attack_p2 method=post>
-    <input type=submit value=Attack>
+  <form action=/play/punch method=post>
+    <input type=submit value=Punch>
+  </form>
+</div>
+<div>
+  <form action=/play/kick method=post>
+    <input type=submit value=Kick>
   </form>
 </div>
 

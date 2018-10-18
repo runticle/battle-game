@@ -5,7 +5,7 @@ feature 'swtiching turns' do
   end
   scenario 'p2 attacks next' do
     sign_in_and_play
-    click_button 'Attack'
+    click_button 'Punch'
     expect(page).to have_content "It's the turn of the mighty Not John"
   end
 end

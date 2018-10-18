@@ -12,10 +12,10 @@ describe Game do
     end
   end
 
-  describe '#attack' do
+  describe '#punch' do
     it 'damages player 1' do
-      expect(player1).to receive(:receive_damage)
-      game.attack(player1)
+      expect(player1).to receive(:receive_punch)
+      game.punch(player1)
     end
     describe '#change_attacker'
     it 'player 2 is next receiver' do
@@ -26,8 +26,15 @@ describe Game do
       expect(game.next_receiver).to eq player1
     end
     it 'damages player 2' do
-      expect(player2).to receive(:receive_damage)
-      game.attack(player2)
+      expect(player2).to receive(:receive_punch)
+      game.punch(player2)
+    end
+  end
+
+  describe "#kick" do
+    it 'damages player 1' do
+      expect(player1).to receive(:receive_kick)
+      game.kick(player1)
     end
   end
 end
