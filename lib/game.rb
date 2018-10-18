@@ -3,8 +3,8 @@ class Game
 
   def initialize(player1, player2)
     @players = [player1, player2]
-    @receiver = player2
     @attacker = player1
+    @receiver = player2
     @message = "I hope you're ready for this..."
   end
 
@@ -35,7 +35,7 @@ class Game
   def punch(player)
     player.receive_punch
     @message = punch_message
-    switch_players
+    switch_players unless player.paralysed?
   end
 
   def kick(player)
@@ -62,8 +62,8 @@ class Game
   end
 
   def loser
-    @loser = player1 if player1.dead
-    @loser = player2 if player2.dead
+    player1 if player1.dead
+    player2 if player2.dead
   end
 
   def winner
@@ -81,6 +81,6 @@ class Game
   end
 
   def heal_message
-    "#{@attacker.name} healed himself!"
+    "#{@attacker.name} applied some bandages!"
   end
 end

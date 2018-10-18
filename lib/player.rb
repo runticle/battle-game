@@ -1,5 +1,6 @@
 class Player
   DEFAULT_HEALTH_POINTS = 100
+  PARA_CHANCE = 10
   attr_reader :name, :health
 
   def initialize(name, hitpoints = DEFAULT_HEALTH_POINTS)
@@ -22,7 +23,11 @@ class Player
     @health += 25
   end
 
-  # health
+  # health and wellbeing
+
+  def paralysed?
+    rand(PARA_CHANCE) == 1
+  end
 
   def health_status
     health_calc

@@ -1,12 +1,9 @@
 require 'sinatra/base'
-require 'sinatra/flash'
 require './lib/player'
 require './lib/game'
 
 class Battle < Sinatra::Base
-  enable :sessions
-  register Sinatra::Flash
-
+  
   before do
     @game = Game.instance
   end
@@ -39,12 +36,11 @@ class Battle < Sinatra::Base
   end
 
   post '/play/heal' do
-    @game.heal(@game.receiver)
+    @game.heal(@game.attacker)
     redirect('/play')
   end
 
   get '/game-over' do
-    @game
     erb(:game_over)
   end
 end

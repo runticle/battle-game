@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player1) { double(:player1, name: "John") }
-  let(:player2) { double(:player2, name: "Not John") }
+  let(:player1) { double(:player1, name: "John", paralysed?: false)}
+  let(:player2) { double(:player2, name: "Not John", paralysed?: false) }
   let(:game) { described_class.new(player1, player2) }
 
   describe '#initialize' do
@@ -35,6 +35,12 @@ describe Game do
     it 'damages player 1' do
       expect(player1).to receive(:receive_kick)
       game.kick(player1)
+    end
+    it 'has a chance to paralyse receiver' do
+      allow(player2).to receive(:receive_punch)
+      allow(player2).to receive(:paralysed?).and_return true
+      game.punch(player2)
+      expect(game.attacker).to eq player1
     end
   end
 
