@@ -26,9 +26,14 @@
       min-width: 40em;
       margin: 0 auto;
     }
+
     .label {
       color: #B00B1E;
-      margin-right: .5em;
+      margin: 0 .5em;
+    }
+
+    .name {
+      color: rebeccapurple;
     }
 
     .healthcontainer {
@@ -75,17 +80,17 @@
   </div>
 <% end %>
 <section class="game">
-  <div name=player_1 style="width: 50%;float:left;">
-    <h1><span class="label">Player 1:</span> <%= @game.player1.name %> </h1>
-    <div> <%= @game.player1.name %> <%= @game.player1.health%>HP</div>
+  <div name=player_1 style="width: calc(50% - 1.5em);float:left;margin: 0 .75em;">
+    <h1><span class="label">Player 1:</span><span class="name"><%= @game.player1.name %></span></h1>
+    <div><span class="name"><%= @game.player1.name %> </span><strong><%= @game.player1.health%>HP</strong></div>
     <div class="healthcontainer <%= @game.player1.health_status %>">
       <div class="health" style="width: <%= @game.player1.health %>%;"></div>
     </div>
   </div>
 
-  <div name=player_2 style="width: 50%;float:right;">
-    <h1><span class="label">Player 2:</span> <%= @game.player2.name %> </h1>
-    <div> <%= @game.player2.name %> <%= @game.player2.health%>HP</div>
+  <div name=player_2 style="width: calc(50% - 1.5em);float:right;margin: 0 .75em;">
+    <h1><span class="label">Player 2:</span><span class="name"><%= @game.player2.name %></span> </h1>
+    <div> <span class="name"><%= @game.player2.name %> </span><strong><%= @game.player2.health%>HP</strong></div>
     <div class="healthcontainer <%= @game.player2.health_status %>">
       <div class="health" style="width: <%= @game.player2.health %>%;"></div>
     </div>
