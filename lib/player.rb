@@ -8,6 +8,8 @@ class Player
     @health_status = 'strong'
   end
 
+  # moves
+
   def receive_punch
     @health -= punch_damage
   end
@@ -20,6 +22,8 @@ class Player
     @health += 25
   end
 
+  # health
+
   def health_status
     health_calc
   end
@@ -31,11 +35,11 @@ class Player
   private
 
   def punch_damage
-    Kernel.rand(20)
+    [10, 10, 10, 15, 15, 15, 20, 20, 20].sample
   end
 
   def kick_damage
-    Kernel.rand(30)
+    [0, 0, 5, 5, 30, 30, 40].sample
   end
 
   def health_calc

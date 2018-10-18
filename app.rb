@@ -26,12 +26,20 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  post '/play/:attack' do
-    @game.punch(@game.next_receiver)
-    flash[:attack] = "#{@game.next_attacker.name} #{params[:attack]}ed #{@game.next_receiver.name}! Yay!"
+  post '/play/punch' do
+    @game.punch(@game.receiver)
     redirect('/game-over') if @game.game_over?
-    @game.change_receiver
-    @game.change_attacker
+    redirect('/play')
+  end
+
+  post '/play/kick' do
+    @game.kick(@game.receiver)
+    redirect('/game-over') if @game.game_over?
+    redirect('/play')
+  end
+
+  post '/play/heal' do
+    @game.heal(@game.receiver)
     redirect('/play')
   end
 

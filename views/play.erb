@@ -81,7 +81,7 @@
 </head>
 <body>
 <div class="message">
-It's the turn of the mighty <%= @game.next_attacker.name %>
+It's the turn of the mighty <%= @game.attacker.name %>
 </div>
 
 <section class="game">
@@ -111,10 +111,13 @@ It's the turn of the mighty <%= @game.next_attacker.name %>
     <input type=submit value=Kick>
   </form>
 </div>
+<div>
+  <form action=/play/heal method=post>
+    <input type=submit value=Heal>
+  </form>
+</div>
 
-<% if flash[:attack] %>
-  <div class="message"><%= flash[:attack] %></div>
-<% end %>
+<aside name=msgbox><%= @game.message %></aside>
 
 </body>
 </html>

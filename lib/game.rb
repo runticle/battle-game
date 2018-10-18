@@ -1,10 +1,11 @@
 class Game
-  attr_reader :next_receiver, :next_attacker
+  attr_reader :receiver, :attacker
 
   def initialize(player1, player2)
     @players = [player1, player2]
-    @next_receiver = player2
-    @next_attacker = player1
+    @receiver = player2
+    @attacker = player1
+    @message = "I hope you're ready for this..."
   end
 
   def self.create(player1, player2)
@@ -23,28 +24,37 @@ class Game
     @players.last
   end
 
+  # messages
+
+  def message
+    @message
+  end
+
   # players moves
 
   def punch(player)
     player.receive_punch
+    @message = punch_message
+    switch_players
   end
 
   def kick(player)
     player.receive_kick
+    @message = kick_message
+    switch_players
   end
 
   def heal(player)
     player.heal
+    @message = heal_message
+    switch_players
   end
 
   # game mechanics
 
-  def change_receiver
-    @next_receiver = @next_receiver == player1 ? player2 : player1
-  end
-
-  def change_attacker
-    @next_attacker = @next_attacker == player1 ? player2 : player1
+  def switch_players
+    @receiver = @receiver == player1 ? player2 : player1
+    @attacker = @attacker == player1 ? player2 : player1
   end
 
   def game_over?
@@ -58,5 +68,19 @@ class Game
 
   def winner
     player1 == loser ? player2 : player1
+  end
+
+  private
+
+  def punch_message
+    "#{@attacker.name} punched #{@receiver.name}!"
+  end
+
+  def kick_message
+    "#{@attacker.name} kicked #{@receiver.name}!"
+  end
+
+  def heal_message
+    "#{@attacker.name} healed himself!"
   end
 end

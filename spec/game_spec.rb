@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player1) { double(:player1) }
-  let(:player2) { double(:player2) }
+  let(:player1) { double(:player1, name: "John") }
+  let(:player2) { double(:player2, name: "Not John") }
   let(:game) { described_class.new(player1, player2) }
 
   describe '#initialize' do
@@ -19,11 +19,11 @@ describe Game do
     end
     describe '#change_attacker'
     it 'player 2 is next receiver' do
-      expect(game.next_receiver).to eq player2
+      expect(game.receiver).to eq player2
     end
-    it 'changes next_receiver to player 2' do
-      game.change_receiver
-      expect(game.next_receiver).to eq player1
+    it 'changes receiver to player 2' do
+      game.switch_players
+      expect(game.receiver).to eq player1
     end
     it 'damages player 2' do
       expect(player2).to receive(:receive_punch)
