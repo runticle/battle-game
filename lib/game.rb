@@ -32,7 +32,7 @@ class Game
   end
 
   def change_attacker
-  @next_attacker = @next_attacker == player1 ? player2 : player1
+    @next_attacker = @next_attacker == player1 ? player2 : player1
   end
 
   def game_over?
